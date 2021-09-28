@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Link to Bootstrap -->
+    <link rel="stylesheet" href="../static/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Top25Project</title>
 </head>
 <body>
+    <header>
+        <h1>The Top 25 Project</h1>
+        <p id = "subtitle">An Analysis of the AP Top 25 Poll</p>
+    </header>
+
+    <h2 id = "summary">Project Summary</h2>
+        <p>
+            The goal of this project is to extract the rules underlying the Associated Press's FBS Top 25 Poll to create a model that will predict the 
+            next week's rankings before they are released. The AP Poll is an aggregation of the rankings of teams by 65 sports reporters chosen for the 
+            task and is updated weekly during the college football season. (See: <a href=https://en.wikipedia.org/wiki/AP_Poll>
+            https://en.wikipedia.org/wiki/AP_Poll</a>.)
+            <br></br>
+            Using machine learning algorithms, I hope to use a team's current metrics (rank, winning percentage, etc.) and its performance during a given
+            week (measured by whether they win or lose, the strength of their opponent, margin of victory/defeat, etc.) to predict the where teams will be 
+            in the poll the following week.
+        </p>
     
+    <h2 id ="success">Measuring Success and Some Limitations</h2>
+        <p>
+            The successfulness of my project will be measured by the R2 score of the regression model that predicts the rankings of teams. If R2 = 1, my model 
+            correctly gives the rankings of all teams for the following week. The closer R2 is to 0, the less successful my model is.
+            <br></br>
+            Because of the time needed to collect the data I need (which will be done manually), my project will not be able to predict the entire rankings 
+            for a week, but rather will predict where teams that were ranked the previous week will be ranked the following week. In other words, though I want 
+            my model to predict whether teams move within the top 25 and whether they fall out of the top 25, it cannot predict which previously teams will 
+            enter the top 25 or where they will be ranked. The only way to do this would be to keep weekly records for all FBS teams (over 100), or at least 
+            for all teams receiving points in the rankings (all teams in any of the judges polls and the number of points they receive in the rankings are 
+            reported weekly, even if these teams are not in the aggregated AP Top 25).
+            <br></br>
+            A second limitation is that I do not attempt to rank teams outside the top 25, so I assign the same value/category to all unranked teams. This 
+            can be expressed as the rank 26 or the category "Unranked" ("UR"). I anticipate that this will cause some degree of distortion in the regression
+            model to predict rank, since I'll have to represent all unranked teams as having the value of 26 for the dependent variable, i.e., their rank 
+            in the top 25.
+            <br></br> 
+            One final limitation is that if and how much a team moves in the rankings often has much (I presume) to do with the performance of other teams in the top 
+            25, however, this kind of complex interrelation of data points may not be able to be captured by the models I design. Whether this will be a significant 
+            issue may become clear as more data is loaded into the models.
+        </p>
+
+    <h2 id="details">Details of the Machine Learning Models</h2>
+        <p>
+            I will use two models to predict rankings: one regression model and one classification model. 
+            
+            The regression model will use a set of input variables to predict a team's ranking for the next week's edition of the AP Poll. Because 
+            regression returns continous real values, not integers, the resulting "rank" given by the model will either need to be rounded to the nearest 
+            positive integer in the interval [1, 26] (in which case two teams may receive the same rank and some ranks not be assignned), or the results will 
+            have to be sorted from least to greatest, in which case, for example, a team with predicted "rank" close to 1 may be assigned the ranking of 2 in the
+            final prediction if another team receives an even lower predicted "rank".
+
+            The classification model will be far less fine-grained than the regression model. I don't think a model that classifies teams into 26 different
+            (1 through unranked) is feasable, so I'll try to achieve the less ambitious goal of predicting whether a team moves up or down in the top 25,
+            drops out, or keeps the same ranking between weeks.  
+        </p>
 </body>
 </html>
