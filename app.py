@@ -15,10 +15,10 @@ db = 'dd351di0els2o7'
 
 engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}/{db}')
 
-@app.route('/', methods=['POST','GET'])
-def home():
-    df = pd.read_sql_query(f"SELECT * FROM rankings ORDER_BY(week, rank)")
-    return render_template('index2.html', tables = [df.to_html(classes='data')], titles = df.columns.values)
+# @app.route('/', methods=['POST','GET'])
+# def home():
+#     df = pd.read_sql_query(f"SELECT * FROM rankings ORDER_BY(week, rank)")
+#     return render_template('index2.html', tables = [df.to_html(classes='data')], titles = df.columns.values)
 
 if __name__ == '__main__':
     app.run()
