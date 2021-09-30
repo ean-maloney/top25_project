@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rankings Models</title>
+</head>
+<body>
+    <div class="topnav2">
+        <a class="active" href="index.html">Home</a>
+        <a class="active" href="index2.html">Models</a>
+    </div>
+
+    <!-- https://stackoverflow.com/questions/52644035/how-to-show-a-pandas-dataframe-into-a-existing-flask-html-table -->
+    {% for table in tables %} 
+        {{table|safe}}
+    {% endfor %}
+
+    <footer>
+        <p id = footergraph>
+            For more info about my projects, or to get in contact with me, visit <br> <a href = ean-maloney.com>ean-maloney.com</a>.
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Link to Bootstrap -->
     <link rel="stylesheet" href="../static/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +13,10 @@
             <h1>The Top 25 Project</h1>
             <p id = "subtitle">An Analysis of the AP Top 25 Poll</p>
         </header>
+    </div>
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a class="active" href="index2.html">Models</a>
     </div>
 
     <div class='tableauPlaceholder' id='viz1632935396932' style='position: relative'><noscript><a href='#'><img alt='Rankings by Conference ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;AP&#47;APRanks&#47;Slides&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='APRanks&#47;Slides' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;AP&#47;APRanks&#47;Slides&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1632935396932');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth * 1.25)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
@@ -54,7 +57,7 @@
 
     <h2 id="details">Details of the Machine Learning Models</h2>
         <p>
-            I will use two models to predict rankings: one regression model and one classification model. 
+            I will use both regression and classification models to predict rankings: one regression model and one classification model. 
             
             The regression model will use a set of input variables to predict a team's ranking for the next week's edition of the AP Poll. Because 
             regression returns continous real values, not integers, the resulting "rank" given by the model will either need to be rounded to the nearest 
@@ -63,8 +66,8 @@
             final prediction if another team receives an even lower predicted "rank".
 
             The classification model will be far less fine-grained than the regression model. I don't think a model that classifies teams into 26 different
-            (1 through unranked) is feasable, so I'll try to achieve the less ambitious goal of predicting whether a team moves up or down in the top 25,
-            drops out, or keeps the same ranking between weeks.  
+            categories (1 through unranked) is feasable, so I'll try to achieve the less ambitious goals of predicting whether a team moves up or down 
+            in the top 25, drops out, or keeps the same ranking between weeks and of sorting teams next rankings into the bins [1-5], [6-10], [11-15], [16-20], [21-25], [Unranked].
         </p>
     
     <footer>
