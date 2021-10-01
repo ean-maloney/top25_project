@@ -21,7 +21,7 @@ def home():
 
 @app.route('/models', methods=['POST','GET'])
 def models():
-    df = pd.read_sql_query(f"select * from school_geo where institution_name ilike '%%{school}%%'", con=engine)
+    df = pd.read_sql_query(f"SELECT * FROM rankings ORDER BY (week, rank)", con=engine)
     return render_template('index2.html', tables = [df.to_html(classes='data')], titles = df.columns.values)
 
 if __name__ == '__main__':
