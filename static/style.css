@@ -105,5 +105,5 @@ footer{
 
 #table{
     height: 300px;
-    overflow: auto;
+    overflow-y: auto;
 }
