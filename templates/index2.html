@@ -23,7 +23,15 @@
     </div>
 
     <h2>Regression Models</h2>
-        <p>Post Week 5</p> 
+        <p>Setup: The results column was converted from W/L to binary outcomes 1/0. Movement and Team columns were dropped. Target column Next Week Rank was split off. Train/test split set to .75/.25.</p>
+        <p>Post Week 5: The Multiple Linear Regression Model is performing the best, with an R2 of approximately .933. Scaling values prior to fitting had little effect on the model. Random Forest and AdaBoost Regressions had R2 in the .80s.</p> 
+    <h2>Classification Models</h2>
+    <h3>Movement Predictor</h3>
+        <p>Setup: Same as for regression except target column was set to values [0, 3] where 0 stands for "dropped out of top 25", 1 for "moved up in top 25", 2 for "moved down in top 25", and 3 for "stayed at same place in top 25".</p>
+        <p>Post Week 5: Results were overall unimpressive with best accuracy around .71 for SVM classifier.</p>
+    <h3>Bin Predictor</h3>
+        <p>Setup: Same as for regression except target column was set to values [0, 5] where 0 stood for ranks 1-5, 1 for ranks 6-10, etc., and 5 for unranked.</p>
+        <p>Post Week 5: Results were worse than for Movement Predictor. Top accuracy score for Decision Tree Classifier, with accuracy around .46.</p>
     <footer>
         <p id = footergraph>
             For more info about my projects, or to get in contact with me, visit <br> <a href = ean-maloney.com>ean-maloney.com</a>.
