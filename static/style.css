@@ -105,5 +105,11 @@ footer{
 
 #table{
     height: 300px;
+    width: 600px;
     overflow-y: auto;
+}
+
+h3{ 
+    font-family: "Courier New";
+    text-align: center
 }
