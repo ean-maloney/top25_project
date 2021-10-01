@@ -105,9 +105,9 @@ footer{
 
 #table{
     height: 300px;
-    width: 100%;
+    overflow-x: none;
     overflow-y: auto;
-    justify-content: center;
+
 }
 
 #date{ 
