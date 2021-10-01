@@ -13,10 +13,14 @@
         <a class="active" href="https://top25.herokuapp.com/models">Models</a>
     </div>
 
+    <h2>Rankings Data</h2>
+    <h3>Through 09/26/2021</h3>
     <!-- https://stackoverflow.com/questions/52644035/how-to-show-a-pandas-dataframe-into-a-existing-flask-html-table -->
-    {% for table in tables %} 
-        {{table|safe}}
-    {% endfor %}
+    <div id = "table">
+        {% for table in tables %} 
+            {{table|safe}}
+        {% endfor %}
+    </div>
 
     <footer>
         <p id = footergraph>
