@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predictions</title>
 </head>
-<body id=body3>
+<body>
     <div class="topnav2">
         <a class="active" href="https://top25.herokuapp.com/">Home</a>
         <a class="active" href="https://top25.herokuapp.com/models">Models</a>
@@ -16,9 +16,15 @@
 
     <h2>Interpreting the Predictions</h2>
     <p>
-        These predictions were made by training a multiple regression model using the AP Poll data from past weeks to predict the next week's rankings based on the results of the most recent games.
-
-        
+        These predictions were made by training a multiple linear regression model using the AP Poll data from past weeks to predict 
+        the next week's rankings based on the results of the most recent games.
+        <br><br>
+        The "previous_rank" column shows what each team was ranked prior to the most recent games. The "predicted_rank" column shows the 
+        output of the linear regression. The "predicted_ordinal_rank" column orders these rankings from 1 to 25, and the "actual_rank" 
+        column shows what rank each team was given in the actual AP Poll.
+        <br><br>
+        Therefore, the "predicted_ordinal_rank" does not indicate whether a team will drop out of the top 25, while teams with a "predicted_rank"
+        close to or greater than 26 are predicted to drop out.
     </p>
 
     <h2>Week 6 Predictions vs. Actual</h2>
