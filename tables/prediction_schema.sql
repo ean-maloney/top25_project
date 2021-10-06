@@ -1,3 +1,4 @@
+-- Change week before creating
 CREATE TABLE "week6_predictions" (
     team VARCHAR   NOT NULL,
     previous_rank INT NOT NULL,
