@@ -26,7 +26,7 @@ def models():
 
 @app.route('/predictions', methods=['POST','GET'])
 def predictions():
-    df5 = pd.reaad_sql_query(f'SELECT * FROM week5_predictions', con=engine)
+    df5 = pd.read_sql_query(f'SELECT * FROM week5_predictions', con=engine)
     df6 = pd.read_sql_query(f"SELECT * FROM week6_predictions", con=engine)
     return render_template('index3.html', tables6 = [df6.to_html(classes='data')], tables5 = [df5.to_html(classes='data')], titles = df6.columns.values)
 
