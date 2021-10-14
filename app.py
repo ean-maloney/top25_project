@@ -31,6 +31,9 @@ def predictions():
     df7 = pd.read_sql_query(f"SELECT * FROM week7_predictions", con=engine)
     return render_template('index3.html', tables7 = [df7.to_html(classes='data')], tables6 = [df6.to_html(classes='data')], tables5 = [df5.to_html(classes='data')], titles = df6.columns.values)
 
+@app.route('/technical_stuff', methods=['POST', 'GET'])
+def technical_stuff():
+    return render_template('index4.html')
 
 if __name__ == '__main__':
     app.run()
