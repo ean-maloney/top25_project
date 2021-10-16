@@ -76,7 +76,7 @@ footer{
 
 .topnav a{
     font-family: "Courier New";
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 30px;
     padding: 10px;
     background: rgb(0, 195, 255);
@@ -96,7 +96,7 @@ footer{
 
 .topnav2 a{
     font-family: "Courier New";
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 30px;
     padding: 10px;
     background: rgb(0, 195, 255);
@@ -124,14 +124,20 @@ footer{
 }
 
 #doc{
-    font-family: "Courier New";
-    font-size: 20px;
     border-radius: 30px;
     padding: 10px;
     background: rgb(0, 195, 255);
     color: black;
-    margin-right: .5em;
     border: solid;
     border-color: black;
-    text-decoration: none;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#doc_header{
+    font-family: "Courier New";
+    font-size: 25px;
+    margin-bottom: -.25em;
+    margin-top: -.05em
 }
