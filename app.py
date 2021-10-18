@@ -29,7 +29,8 @@ def predictions():
     df5 = pd.read_sql_query(f'SELECT * FROM week5_predictions', con=engine)
     df6 = pd.read_sql_query(f"SELECT * FROM week6_predictions", con=engine)
     df7 = pd.read_sql_query(f"SELECT * FROM week7_predictions", con=engine)
-    return render_template('index3.html', tables7 = [df7.to_html(classes='data')], tables6 = [df6.to_html(classes='data')], tables5 = [df5.to_html(classes='data')], titles = df6.columns.values)
+    df8 = pd.read_sql_query(f"SELECT * FROM week8_predictions", con=engine)
+    return render_template('index3.html', table8 = [df8.to_html(classes='data')], tables7 = [df7.to_html(classes='data')], tables6 = [df6.to_html(classes='data')], tables5 = [df5.to_html(classes='data')], titles = df6.columns.values)
 
 @app.route('/technical_stuff', methods=['POST', 'GET'])
 def technical_stuff():

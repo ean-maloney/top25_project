@@ -28,6 +28,14 @@
         close to or greater than 26 are predicted to drop out.
     </p>
 
+    <h2>Week 8 Predictions vs. Actual</h2>
+    <!-- https://stackoverflow.com/questions/52644035/how-to-show-a-pandas-dataframe-into-a-existing-flask-html-table -->
+    <div id = "table3">
+        {% for table in tables8 %} 
+            {{table|safe}}
+        {% endfor %}
+    </div>
+
     <h2>Week 7 Predictions vs. Actual</h2>
     <!-- https://stackoverflow.com/questions/52644035/how-to-show-a-pandas-dataframe-into-a-existing-flask-html-table -->
     <div id = "table3">
