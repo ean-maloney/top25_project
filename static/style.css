@@ -76,7 +76,7 @@ footer{
 
 .topnav a{
     font-family: "Courier New";
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 30px;
     padding: 10px;
     background: rgb(0, 195, 255);
@@ -96,7 +96,7 @@ footer{
 
 .topnav2 a{
     font-family: "Courier New";
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 30px;
     padding: 10px;
     background: rgb(0, 195, 255);
@@ -109,7 +109,7 @@ footer{
 
 #table2{
     height: 300px;
-    overflow-y: auto;
+    overflow-y: scroll;
     margin-left: -10%;
     width: 200%;
 }
