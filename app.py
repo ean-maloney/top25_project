@@ -30,7 +30,9 @@ def predictions():
     df6 = pd.read_sql_query(f"SELECT * FROM week6_predictions", con=engine)
     df7 = pd.read_sql_query(f"SELECT * FROM week7_predictions", con=engine)
     df8 = pd.read_sql_query(f"SELECT * FROM week8_predictions", con=engine)
-    return render_template('index3.html', tables8 = [df8.to_html(classes='data')], tables7 = [df7.to_html(classes='data')], tables6 = [df6.to_html(classes='data')], tables5 = [df5.to_html(classes='data')], titles = df6.columns.values)
+    df9 = pd.read_sql_query(f"SELECT * FROM week9_predictions", con=engine)
+    df10 = pd.read_sql_query(f"SELECT * FROM week10_predictions", con=engine)
+    return render_template('index3.html', tables10 = [df10.to_html(classes='data')], tables9 = [df9.to_html(classes='data')], tables8 = [df8.to_html(classes='data')], tables7 = [df7.to_html(classes='data')], tables6 = [df6.to_html(classes='data')], tables5 = [df5.to_html(classes='data')], titles = df6.columns.values)
 
 @app.route('/technical_stuff', methods=['POST', 'GET'])
 def technical_stuff():
