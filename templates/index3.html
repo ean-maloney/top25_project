@@ -21,8 +21,9 @@
         the next week's rankings based on the results of the most recent games.
         <br><br>
         The "previous_rank" column shows what each team was ranked prior to the most recent games. The "predicted_rank" column shows the 
-        output of the linear regression. The "predicted_ordinal_rank" column orders these rankings from 1 to 25, and the "actual_rank" 
-        column shows what rank each team was given in the actual AP Poll.
+        output of the linear regression. The "predicted_ordinal_rank" column orders these rankings from 1 to 25, and the "adj_pred_ordinal_rank"
+        column adjusts the predicted ordinal rank by giving teams with predicted_rank over 25 a rank of 26.
+        Finally, the "actual_rank" column shows what rank each team was given in the actual AP Poll.
         <br><br>
         Therefore, the "predicted_ordinal_rank" does not indicate whether a team will drop out of the top 25, while teams with a "predicted_rank"
         close to or greater than 26 are predicted to drop out.
