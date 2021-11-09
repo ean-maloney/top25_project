@@ -16,7 +16,7 @@
     </div>
 
     <h2>Rankings Data</h2>
-        <p id="date">Through 10/31/2021</p>
+        <p id="date">Through 11/8/2021</p>
     <!-- https://stackoverflow.com/questions/52644035/how-to-show-a-pandas-dataframe-into-a-existing-flask-html-table -->
     <div id = "table2">
         {% for table in tables %} 
@@ -26,25 +26,21 @@
 
     <h2>Regression Models</h2>
         <p>Setup: The results column was converted from W/L to binary outcomes 1/0. Movement and Team columns were dropped. Target column Next Week Rank was split off. Train/test split set to .75/.25.</p>
-        <p>Post Week 4: The Multiple Linear Regression Model is performing the best, with an R2 of approximately .933. Scaling values prior to fitting had little effect on the model. Random Forest and AdaBoost Regressions had R2 in the .80s.</p> 
-        <p>Post Week 5: Linear Regression Model improved to .941. Random Forest and AdaBoost Models at near or above .90.</p>
-        <p>Post Week 6: Slight decline in R2 of Linear Models and AdaBoost (change &lt; .01), small decrease in accuracy of Decision Tree, Random Forest, and Scaled AdaBoost (~.03).</p>
-        <p>Post Week 7: Positive change in R2 for all Linear Models, with Random Forest models improving the most (+.102).</p>
+
     <h2>Classification Models</h2>
     <h3>Movement Predictor</h3>
         <p>Setup: Same as for regression except target column was set to values [0, 3] where 0 stands for "dropped out of top 25", 1 for "moved up in top 25", 2 for "moved down in top 25", and 3 for "stayed at same place in top 25".</p>
-        <p>Post Week 4: Results were overall unimpressive with best accuracy around .71 for SVM classifier.</p>
-        <p>Post Week 5: Random Forest Classifier improved to accuracy of .77, SVM model accuracy declined.</p>
-        <p>Post Week 6: Minor increase in accuracy of Decision Tree and SVM Model. Concerning that the Decision Tree has had the same score as the SVE Model for the last two weeks. Minor decrease in accuracy for other models.</p>
-        <p>Post Week 7: Decrease in accuracy of all models up to -.219 (Unscaled SVM).</p>
+    
     <h3>Bin Predictor</h3>
         <p>Setup: Same as for regression except rank feature and target column were set to values [0, 5] where 0 stood for ranks 1-5, 1 for ranks 6-10, etc., and 5 for unranked.</p>
-        <p>Post Week 4: Results were worse than for Movement Predictor. Top accuracy score for Decision Tree Classifier, with accuracy around .46.</p>
-        <p>Post Week 5: Significant improvement in Random Forest Model to accuracy of .645.</p> 
-        <p>Post Week 6: Minor decrease in accuracy across all models. Unscaled SVM had worst decline of .105.</p>
-        <p>Post Week 7: Improvements in all models ranging from +.012 (Scaled SVM) to +.149 (Decision Tree).</p>
+    
+    <h2>Model Scores by Week</h2>
+        <div id = "graph">
+            <div class='tableauPlaceholder' id='viz1636416908205' style='position: relative'><noscript><a href='#'><img alt='Story 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;ScoresbyWeek&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ScoresbyWeek&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;ScoresbyWeek&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1636416908205');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='800px';vizElement.style.height='827px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        </div>
 
     <h3>See the full model evaluation report <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9GyR3AInP3wii7JlnBAmBbgix3GwlO09W10kkYMtyTTdqcLY4_N1rDAd12GTjXcQsfyHWVmEo-ti8/pub?output=csv">here</a>.</h3>
+    
     <footer>
         <p id = footergraph>
             For more info about my projects, or to get in contact with me, visit <br> <a href = ean-maloney.com>ean-maloney.com</a>.
