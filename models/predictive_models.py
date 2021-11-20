@@ -1,6 +1,11 @@
-def data_prep(next_week):
-    import pandas as pd
+import pandas as pd
+from sklearn.metrics import r2_score
 
+import sys
+sys.path.append('../libraries')
+from ordinal.ordinal import get_error
+
+def data_prep(next_week):
     #Set file path
     file = "../tables/2021AP.xlsx"
 
@@ -25,8 +30,6 @@ def data_prep(next_week):
     return df    
 
 def build_output(max_rank, next_teams, next_rank_act, byes_index, model_output):
-    import pandas as pd
-
     #Add back teams with byes to output
     next_rank_pred = model_output.tolist()
     for item in byes_index:
@@ -81,14 +84,7 @@ def build_output(max_rank, next_teams, next_rank_act, byes_index, model_output):
     return merged_results
 
 def run_mlr(mlr_params, df, next_week, get_table = False):
-    import pandas as pd
     from sklearn.linear_model import LinearRegression
-    from sklearn.metrics import r2_score
-
-    import sys
-    sys.path.append('../libraries')
-
-    from ordinal.ordinal import get_error
 
     #Unpack params
     feature_drop = mlr_params['feature_drop']
@@ -142,14 +138,7 @@ def run_mlr(mlr_params, df, next_week, get_table = False):
         return r2, total_error, merged_results
 
 def run_rf(rf_params, df, next_week, get_table = False):
-    import pandas as pd
     from sklearn.ensemble import RandomForestRegressor
-    from sklearn.metrics import r2_score
-
-    import sys
-    sys.path.append('../libraries')
-
-    from ordinal.ordinal import get_error
 
     #Unpack params
     feature_drop = rf_params['feature_drop']
