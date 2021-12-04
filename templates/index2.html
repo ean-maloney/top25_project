@@ -16,7 +16,7 @@
     </div>
 
     <h2>Rankings Data</h2>
-        <p id="date">Through 11/8/2021</p>
+        <p id="date">Through 12/4/2021</p>
     <!-- https://stackoverflow.com/questions/52644035/how-to-show-a-pandas-dataframe-into-a-existing-flask-html-table -->
     <div id = "table2">
         {% for table in tables %} 
@@ -35,12 +35,13 @@
         <p>Setup: Same as for regression except rank feature and target column were set to values [0, 5] where 0 stood for ranks 1-5, 1 for ranks 6-10, etc., and 5 for unranked.</p>
     
     <h2>Model Scores by Week</h2>
-        <div id = "graph">
-            <div class='tableauPlaceholder' id='viz1636416908205' style='position: relative'><noscript><a href='#'><img alt='Story 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;ScoresbyWeek&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ScoresbyWeek&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;ScoresbyWeek&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1636416908205');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='800px';vizElement.style.height='827px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-        </div>
+        <img src = "../docs/images/reg_r2_thru14.png" alt = "Regression R2">
+        <img src = "../docs/images/reg_mae_thru14.png" alt = "Regression MAE">
+        <img src = "../docs/images/move_acc_thru14.png" alt = "Movement Accuracy">
+        <img src = "../docs/images/move_mae_thru14.png" alt = "Movement MAE">
+        <img src = "../docs/images/bin_acc_thru14.png" alt = "Bin Accuracy">
+        <img src = "../docs/images/bin_mae_thru14.png" alt = "Bin MAE">
 
-    <h3>See the full model evaluation report <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9GyR3AInP3wii7JlnBAmBbgix3GwlO09W10kkYMtyTTdqcLY4_N1rDAd12GTjXcQsfyHWVmEo-ti8/pub?output=csv">here</a>.</h3>
-    
     <footer>
         <p id = footergraph>
             For more info about my projects, or to get in contact with me, visit <br> <a href = ean-maloney.com>ean-maloney.com</a>.

@@ -69,7 +69,8 @@ def build_output(max_rank, next_teams, next_rank_act, byes_index, model_output):
     merged_results = results.merge(df2, how = 'left', left_on = 'Predicted Rank', right_on = 'Predicted Rank')
     
     apor_col = []
-
+    
+    #Convert teams with real number rank > 25 to max_rank
     for index, row in merged_results.iterrows():
         if row['Predicted Rank'] > 25:
             apor_col.append(max_rank)

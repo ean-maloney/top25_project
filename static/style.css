@@ -146,6 +146,8 @@ footer{
     margin-top: -.05em
 }
 
-#graph{
-    margin-left: 10%
+img{
+    width: 100%;
+    padding-right: 100%;
+    padding-bottom: 2.5%
 }
